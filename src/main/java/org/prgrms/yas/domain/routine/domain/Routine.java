@@ -1,6 +1,7 @@
 package org.prgrms.yas.domain.routine.domain;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CollectionTable;
@@ -25,6 +26,8 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.prgrms.yas.domain.comment.domain.Comment;
+import org.prgrms.yas.domain.mission.domain.Mission;
 import org.prgrms.yas.domain.routine.dto.RoutineDetailResponse;
 import org.prgrms.yas.domain.user.domain.User;
 
@@ -43,8 +46,10 @@ public class Routine {
   @Column(nullable = false,length = 60)
   private String name;
 
+  @Column(nullable = false,length = 60)
   private String color;
 
+  @Column(nullable = false)
   private String emoji;
 
   @ElementCollection(fetch = FetchType.LAZY)
@@ -54,10 +59,10 @@ public class Routine {
   List<RoutineCategory> routineCategory;
 
   @Column(nullable = false)
-  private LocalDate startTime;
+  private LocalDateTime startGoalTime;
 
   @Column(nullable = false)
-  private LocalDate durationTime;
+  private Long durationGoalTime; // 초가 들어옴
 
 //  @Column(nullable = false)
 //  private Week week;
@@ -74,6 +79,9 @@ public class Routine {
   @OneToMany(mappedBy = "routine")
   private List<RoutineCompletion> routineCompletions = new ArrayList<>();
 
+  @OneToMany(mappedBy = "routine")
+  private List<Mission> missions = new ArrayList<>();
+
   @Column(nullable = false, columnDefinition = "TINYINT default false")
   private boolean isDeleted;
 
@@ -84,6 +92,16 @@ public class Routine {
 
   public Routine addRoutineCompletions(List<RoutineCompletion> routineCompletions) {
     routineCompletions.forEach(this::addRoutineCompletion);
+    return this;
+  }
+
+  public void addMission(Mission mission) {
+    this.missions.add(mission);
+    mission.setRoutine(this);
+  }
+
+  public Routine addMissions(List<Mission> missions) {
+    missions.forEach(this::addMission);
     return this;
   }
 
@@ -98,6 +116,7 @@ public class Routine {
     this.color = color;
     this.emoji = emoji;
   }
+
 
   public List<String> getStringWeeks(List<Week> weeks){
     List<String> result = new ArrayList<>();
