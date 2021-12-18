@@ -10,11 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication
 public class YasApplication {
 	
-		@PostConstruct
-		public void started() {
-			TimeZone.setDefault(TimeZone.getTimeZone("KSA"));
-		}
-	
 	public static void main(String[] args) {
 		SpringApplication.run(
 				YasApplication.class,
