@@ -76,7 +76,7 @@
 
 <br/>
 
-##📜 페이지별 기능
+## 📜 페이지별 기능
 </br>
 
 |<p align="center">회원가입</p>|<p align="center">로그인</p>|
