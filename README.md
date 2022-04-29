@@ -76,16 +76,7 @@
 
 <br/>
 
-## 🌟 Feature
-
-![image](https://user-images.githubusercontent.com/73347933/146924890-030ae04e-44bf-4dfa-af80-708625a72393.png)
-
-<br/>
-
-## 🛢 DB ERD 
-
-![image](https://user-images.githubusercontent.com/73347933/146925579-f219660c-8222-4205-9479-a670760f0f6b.png)
-
+##📜 페이지별 기능
 </br>
 
 |<p align="center">회원가입</p>|<p align="center">로그인</p>|
@@ -115,3 +106,16 @@
 |<p align="center">댓글 작성하기</p>|<p align="center">포스팅, 댓글 좋아요</p>|
 |------|------|
 |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147064180-81f11ee4-12bf-4352-b66f-314922fccc26.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147064248-7fdbb41f-b04b-43d6-8336-4cfdb8157a14.gif" width=60%/></p> |
+
+
+## 🌟 Feature
+
+![image](https://user-images.githubusercontent.com/73347933/146924890-030ae04e-44bf-4dfa-af80-708625a72393.png)
+
+<br/>
+
+## 🛢 DB ERD 
+
+![image](https://user-images.githubusercontent.com/73347933/146925579-f219660c-8222-4205-9479-a670760f0f6b.png)
+
+
